@@ -95,14 +95,14 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-lg border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div
             className="flex-shrink-0 cursor-pointer"
             onClick={() => handleNavigation('')}
           >
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent hover:bg-gradient-to-l from-emerald-600 to-indigo-600 bg-clip-text text-transparent  transition-colors">
+            <h1 className="text-4xl leading-relaxed font-bold bg-gradient-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent hover:bg-gradient-to-l from-emerald-600 to-indigo-600 bg-clip-text text-transparent  transition-colors">
               BlogIT
             </h1>
           </div>
@@ -111,10 +111,10 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={() => handleNavigation('')}
-              className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 transition-colors px-3 py-2 rounded-md cursor-pointer"
+              className="flex justify-center items-center space-x-2 text-gray-700 hover:text-emerald-600 transition-colors px-3 py-2 rounded-md cursor-pointer"
             >
-              <Home size={20} strokeWidth={2} />
-              <span className="text-sm font-medium">Home</span>
+              <Home size={22} strokeWidth={3} />
+              <span className=" text-[1.3rem] font-medium">Home</span>
             </button>
 
             {currentUser ? (

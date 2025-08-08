@@ -102,7 +102,7 @@ const MyBlogs = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-          <div className="flex items-center mb-4 sm:mb-0">
+          <div className="flex  items-center mb-4 sm:mb-0">
             <button
               onClick={() => navigate('/')}
               className="flex items-center text-emerald-600 hover:text-emerald-700 mr-4 transition-colors"
