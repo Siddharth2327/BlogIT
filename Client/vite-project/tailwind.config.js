@@ -1,5 +1,8 @@
-export default {
-  content: ["./index.html", "./src//*.{js,ts,jsx,tsx}"],
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // <-- this tells Tailwind to scan all files in src
+  ],
   theme: {
     extend: {},
   },
