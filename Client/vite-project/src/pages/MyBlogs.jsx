@@ -78,7 +78,7 @@ const MyBlogs = () => {
           <p className="text-gray-600 mb-6">You need to be logged in to view your blogs.</p>
           <button
             onClick={() => navigate('/login')}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
           >
             Login / Register
           </button>
@@ -91,7 +91,7 @@ const MyBlogs = () => {
     return (
       <div className="min-h-screen bg-gray-50 py-8 flex justify-center items-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading your blogs...</p>
         </div>
       </div>
@@ -105,7 +105,7 @@ const MyBlogs = () => {
           <div className="flex items-center mb-4 sm:mb-0">
             <button
               onClick={() => navigate('/')}
-              className="flex items-center text-blue-600 hover:text-blue-700 mr-4 transition-colors"
+              className="flex items-center text-emerald-600 hover:text-emerald-700 mr-4 transition-colors"
             >
               <ArrowLeft size={20} className="mr-2" />
               Back
@@ -118,7 +118,7 @@ const MyBlogs = () => {
           
           <button
             onClick={() => navigate('/create')}
-            className="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="flex items-center bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors font-medium"
           >
             <Plus size={18} className="mr-2" />
             Create New Blog
@@ -149,7 +149,7 @@ const MyBlogs = () => {
             <p className="text-gray-600 mb-6">Start sharing your thoughts with the world!</p>
             <button 
               onClick={() => navigate('/create')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors font-medium"
             >
               Write Your First Blog
             </button>
@@ -161,7 +161,7 @@ const MyBlogs = () => {
                 <div className="p-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                     <div className="flex-1 mb-4 lg:mb-0 lg:mr-6">
-                      <h2 className="text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer transition-colors"
+                      <h2 className="text-xl font-bold text-gray-900 mb-2 hover:text-emerald-600 cursor-pointer transition-colors"
                           onClick={() => navigate(`/blog/${blog._id}`)}>
                         {blog.title}
                       </h2>
@@ -187,7 +187,7 @@ const MyBlogs = () => {
                     <div className="flex flex-wrap gap-2 lg:flex-col lg:items-end">
                       <button
                         onClick={() => navigate(`/blog/${blog._id}`)}
-                        className="flex items-center px-3 py-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                        className="flex items-center px-3 py-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <Eye size={16} className="mr-1" />
                         View
@@ -223,7 +223,7 @@ const MyBlogs = () => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Blog Statistics</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">{blogs.length}</div>
+                <div className="text-3xl font-bold text-emerald-600 mb-2">{blogs.length}</div>
                 <div className="text-gray-600">Total Blogs</div>
               </div>
               <div className="text-center">

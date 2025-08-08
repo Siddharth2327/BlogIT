@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { User, LogOut, PlusCircle, FileText, Menu, X } from 'lucide-react';
+import { User, LogOut, PlusCircle, FileText, Menu, X, Home } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
@@ -19,10 +19,10 @@ const Navbar = () => {
   useEffect(() => {
     const initializeUser = async () => {
       const token = localStorage.getItem("token");
-      
+
       // // Always clear the user state first
       // dispatch(setUser(null));
-      
+
       if (token) {
         try {
           const response = await GetCurrentUser();
@@ -54,7 +54,9 @@ const Navbar = () => {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside); 
+    // THE RULE OF USEEFFECT = react treats the return function as a clean up function 
+    // whenever the component unmounts this return function automatically runs 
   }, []);
 
   const handleLogout = () => {
@@ -82,7 +84,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-blue-600">BlogIT</h1>
+              <h1 className="text-2xl font-bold text-emerald-600">BlogIT</h1>
             </div>
             <div className="animate-pulse bg-gray-200 h-10 w-32 rounded"></div>
           </div>
@@ -96,11 +98,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div 
+          <div
             className="flex-shrink-0 cursor-pointer"
             onClick={() => handleNavigation('')}
           >
-            <h1 className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent hover:bg-gradient-to-l from-emerald-600 to-indigo-600 bg-clip-text text-transparent  transition-colors">
               BlogIT
             </h1>
           </div>
@@ -109,16 +111,17 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={() => handleNavigation('')}
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 transition-colors px-3 py-2 rounded-md cursor-pointer"
             >
-              Home
+              <Home size={20} strokeWidth={2} />
+              <span className="text-sm font-medium">Home</span>
             </button>
 
             {currentUser ? (
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
                 >
                   <User size={18} />
                   <span>My Profile</span>
@@ -136,9 +139,9 @@ const Navbar = () => {
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
                     <div className="px-4 py-2 border-b border-gray-100">
                       <p className="text-sm text-gray-600">Signed in as</p>
-                      <p className="text-sm font-medium text-gray-900 truncate">{currentUser.email}</p>
+                      <p className="text-sm font-medium text-gray-900 truncate">{currentUser.name}</p>
                     </div>
-                    
+
                     <button
                       onClick={() => handleNavigation('my-blogs')}
                       className="flex items-center space-x-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
@@ -146,7 +149,7 @@ const Navbar = () => {
                       <FileText size={16} />
                       <span>My Blogs</span>
                     </button>
-                    
+
                     <button
                       onClick={() => handleNavigation('create')}
                       className="flex items-center space-x-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
@@ -154,9 +157,9 @@ const Navbar = () => {
                       <PlusCircle size={16} />
                       <span>Create New Blog</span>
                     </button>
-                    
+
                     <hr className="my-1" />
-                    
+
                     <button
                       onClick={handleLogout}
                       className="flex items-center space-x-2 w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
@@ -170,7 +173,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => handleNavigation('login')}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors font-medium"
               >
                 Login / Register
               </button>
@@ -181,7 +184,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
+              className="text-gray-700 hover:text-emerald-600 p-2"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -194,7 +197,7 @@ const Navbar = () => {
             <div className="space-y-2">
               <button
                 onClick={() => handleNavigation('')}
-                className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                className="block w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-md"
               >
                 Home
               </button>
@@ -203,25 +206,25 @@ const Navbar = () => {
                 <div className="space-y-2">
                   <div className="px-3 py-2 border-b border-gray-100">
                     <p className="text-sm text-gray-600">Signed in as</p>
-                    <p className="text-sm font-medium text-gray-900">{currentUser.email}</p>
+                    <p className="text-sm font-medium text-gray-900">{currentUser.name}</p>
                   </div>
-                  
+
                   <button
                     onClick={() => handleNavigation('my-blogs')}
-                    className="flex items-center space-x-2 w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                    className="flex items-center space-x-2 w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-md"
                   >
                     <FileText size={16} />
                     <span>My Blogs</span>
                   </button>
-                  
+
                   <button
                     onClick={() => handleNavigation('create')}
-                    className="flex items-center space-x-2 w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                    className="flex items-center space-x-2 w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-md"
                   >
                     <PlusCircle size={16} />
                     <span>Create New Blog</span>
                   </button>
-                  
+
                   <button
                     onClick={handleLogout}
                     className="flex items-center space-x-2 w-full text-left px-3 py-2 text-red-600 hover:bg-red-50 rounded-md"
@@ -233,7 +236,7 @@ const Navbar = () => {
               ) : (
                 <button
                   onClick={() => handleNavigation('login')}
-                  className="block w-full text-left px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  className="block w-full text-left px-3 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
                 >
                   Login / Register
                 </button>

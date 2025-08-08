@@ -55,7 +55,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-64">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading blogs...</p>
             </div>
           </div>
@@ -72,7 +72,7 @@ const Home = () => {
             <p className="text-red-600 text-lg">{error}</p>
             <button 
               onClick={fetchBlogs}
-              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              className="mt-4 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
             >
               Try Again
             </button>
@@ -107,7 +107,7 @@ const Home = () => {
             <p className="text-gray-600 mb-6">Be the first to share your story!</p>
             <button 
               onClick={() => navigate('/login')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
             >
               Get Started
             </button>
@@ -122,7 +122,7 @@ const Home = () => {
                   onClick={() => navigate(`/blog/${blog._id}`)}
                 >
                   <div className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-600 transition-colors">
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-emerald-600 transition-colors">
                       {blog.title}
                     </h2>
                     
@@ -141,7 +141,7 @@ const Home = () => {
                           <span>{formatDate(blog.createdAt)}</span>
                         </div>
                       </div>
-                      <div className="flex items-center text-blue-600 hover:text-blue-700">
+                      <div className="flex items-center text-emerald-600 hover:text-emerald-700">
                         <Eye size={16} className="mr-1" />
                         <span className="mr-1">Read</span>
                         <ChevronRight size={16} />
@@ -176,7 +176,7 @@ const Home = () => {
                         onClick={() => paginate(pageNumber)}
                         className={`px-3 py-2 rounded-lg ${
                           currentPage === pageNumber
-                            ? 'bg-blue-600 text-white'
+                            ? 'bg-emerald-600 text-white'
                             : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
                         }`}
                       >

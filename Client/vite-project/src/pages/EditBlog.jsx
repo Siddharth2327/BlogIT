@@ -96,7 +96,7 @@ const EditBlog = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-64">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading blog...</p>
             </div>
           </div>
@@ -118,7 +118,7 @@ const EditBlog = () => {
             </p>
             <button
               onClick={() => navigate('/')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
             >
               Back to Home
             </button>
@@ -158,7 +158,7 @@ const EditBlog = () => {
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-lg"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all text-lg"
                 placeholder="Enter your blog title..."
                 required
               />
@@ -175,7 +175,7 @@ const EditBlog = () => {
                 value={formData.content}
                 onChange={handleInputChange}
                 rows={15}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-vertical"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all resize-vertical"
                 placeholder="Write your blog content here..."
                 required
               />
@@ -197,7 +197,7 @@ const EditBlog = () => {
               <button
                 type="submit"
                 disabled={saving || (!formData.title.trim() || !formData.content.trim())}
-                className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+                className="flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
               >
                 <Save size={18} className="mr-2" />
                 {saving ? 'Saving...' : 'Save Changes'}

@@ -66,7 +66,7 @@ const BlogDetail = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-64">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading blog...</p>
             </div>
           </div>
@@ -84,7 +84,7 @@ const BlogDetail = () => {
             <p className="text-gray-600 mb-6">{error || 'The blog you are looking for does not exist.'}</p>
             <button
               onClick={() => navigate('/')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
             >
               Back to Home
             </button>
@@ -100,7 +100,7 @@ const BlogDetail = () => {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="flex items-center text-blue-600 hover:text-blue-700 mb-6 transition-colors"
+          className="flex items-center text-emerald-600 hover:text-emerald-700 mb-6 transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
           Back to Home
@@ -119,7 +119,7 @@ const BlogDetail = () => {
                   <div className="flex space-x-2 ml-4">
                     <button
                       onClick={() => navigate(`/edit/${blog._id}`)}
-                      className="flex items-center px-3 py-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="flex items-center px-3 py-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors"
                       title="Edit Blog"
                     >
                       <Edit size={18} className="mr-1" />
@@ -164,7 +164,7 @@ const BlogDetail = () => {
         <div className="mt-8 text-center">
           <button
             onClick={() => navigate('/')}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors font-medium"
           >
             Read More Blogs
           </button>

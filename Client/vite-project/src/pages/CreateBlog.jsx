@@ -72,7 +72,7 @@ const CreateBlog = () => {
           <p className="text-gray-600 mb-6">You need to be logged in to create a blog post.</p>
           <button
             onClick={() => navigate('/login')}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
           >
             Login / Register
           </button>
@@ -88,7 +88,7 @@ const CreateBlog = () => {
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+            className="flex items-center text-emerald-600 hover:text-emerald-700 transition-colors"
           >
             <ArrowLeft size={20} className="mr-2" />
             Back
@@ -143,7 +143,7 @@ const CreateBlog = () => {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Enter your blog title..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-emerald-500"
                   required
                 />
               </div>
@@ -159,7 +159,7 @@ const CreateBlog = () => {
                   onChange={handleChange}
                   placeholder="Write your blog content here..."
                   rows={20}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-vertical focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-vertical focus:ring-2 focus:ring-emerald-500"
                   required
                 />
                 <p className="text-sm text-gray-500 mt-2">
@@ -171,7 +171,7 @@ const CreateBlog = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
+                  className="flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:bg-gray-400 transition-colors"
                 >
                   <Save size={18} className="mr-2" />
                   {loading ? 'Publishing...' : 'Publish Blog'}
@@ -189,9 +189,9 @@ const CreateBlog = () => {
         </div>
 
         {!previewMode && (
-          <div className="mt-8 bg-blue-50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-blue-900 mb-4">Writing Tips</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-blue-800">
+          <div className="mt-8 bg-emerald-50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-emerald-900 mb-4">Writing Tips</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-emerald-800">
               <div>
                 <h4 className="font-medium mb-2">Title Tips:</h4>
                 <ul className="list-disc list-inside space-y-1">
