@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const dbstring = 'mongodb+srv://Siddharth2302:YTZNopAQyp2lwZue@cluster0.zexdo6l.mongodb.net/BlogIT?retryWrites=true&w=majority&appName=Cluster0';
+
+require('dotenv').config();
+const dbstring = process.env.DB_string;
 mongoose.connect(dbstring);
 const connection = mongoose.connection;
 connection.on('connected', ()=>{
